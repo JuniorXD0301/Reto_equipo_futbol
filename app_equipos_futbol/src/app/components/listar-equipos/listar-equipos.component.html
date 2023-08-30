@@ -1,0 +1,78 @@
+<div class="dj-banner">
+    <div class="dj-bg">
+        <img src="/images/img-principal.png" alt="" height="400px">
+        <div class="dj-text">
+            <h1><b>Lista de equipos</b></h1>
+        </div>
+    </div>            
+</div>
+<div class="row">
+  <div class="col-md-4" *ngFor="let equipo of equipos">
+    <div class="card-body">
+      <ul>
+        <li>
+          <h5 class="card-title">
+            Nombre del equipo:
+            {{
+              equipo.nombre
+                ? equipo.nombre
+                : "No se tiene información del nombre del equipo"
+            }}
+          </h5>
+        </li>
+        <li>
+          Estadio:
+          {{
+            equipo.estadio
+              ? equipo.estadio
+              : "No se tiene información del estadio del equipo"
+          }}
+        </li>
+        <li>
+          Sitio web:
+          {{
+            equipo.sitioWeb
+              ? equipo.sitioWeb
+              : "No se tiene información del sitio web del equipo"
+          }}
+        </li>
+        <li>
+          Nacionalidad:
+          {{
+            equipo.nacionalidad
+              ? equipo.nacionalidad
+              : "No se tiene información de la nacionalidad del equipo"
+          }}
+        </li>
+        <li>
+          Año de fundación:
+          {{ formatearFecha(equipo.fundacion) }}
+        </li>
+        <li>
+          Entrenador:
+          {{
+            equipo.entrenador
+              ? equipo.entrenador
+              : "No se tiene información del entrenador del equipo"
+          }}
+        </li>
+        <li>
+          Capacidad del estadio:
+          {{
+            equipo.capacidad
+              ? equipo.capacidad
+              : "No se tiene información de la capacidad del equipo"
+          }}
+        </li>
+        <li>
+          Valor:
+          {{
+            equipo.valor
+              ? equipo.valor
+              : "No se tiene información del valor del equipo"
+          }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
