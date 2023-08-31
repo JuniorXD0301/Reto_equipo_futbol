@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EquiposService } from 'src/app/services/equipos.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   templateUrl: './login.component.html',
@@ -11,7 +12,8 @@ export class LoginComponent {
   constructor(
     private route: Router,
     private fb: FormBuilder,
-    private equipoService: EquiposService
+    private equipoService: EquiposService,
+    private snackbar: MatSnackBar
   ) {}
 
   loginForm: FormGroup = this.fb.group({
@@ -24,10 +26,10 @@ export class LoginComponent {
       this.equipoService
         .login(this.loginForm.value.usuario, this.loginForm.value.password)
         .subscribe((data) => {});
-      // Aquí puedes realizar la lógica de autenticación
-      // Por ejemplo, verificar el usuario y contraseña
-      // Si la autenticación es exitosa, puedes redirigir a la página principal
       this.route.navigate(['/equipos/listar']);
+    }
+    else{
+      this.snackbar.open('Usuario o contraseña incorrectos', 'Cerrar', );
     }
   }
 

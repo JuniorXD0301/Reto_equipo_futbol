@@ -1,5 +1,9 @@
-<button class="btn btn-info" (click)="login()">Volver al inicio</button>
-<div class="container mt-5">
+<div class="container mt-2">
+  <div class="boton-logout">
+    <button class="btn btn-info" (click)="login()">Volver al inicio</button>
+  </div>
+</div>
+<div class="container mt-3">
   <h1><b>Consulta de equipos</b></h1>
   <form [formGroup]="consultaForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
@@ -16,7 +20,7 @@
             type="text"
             formControlName="fechaInicio"
             class="form-control"
-            placeholder="dd/mm/aaaa"
+            placeholder="dd-mm-aaaa"
           />
         </div>
       </div>
@@ -27,7 +31,7 @@
             type="text"
             formControlName="fechaFin"
             class="form-control"
-            placeholder="dd/mm/aaaa"
+            placeholder="dd-mm-aaaa"
           />
         </div>
       </div>

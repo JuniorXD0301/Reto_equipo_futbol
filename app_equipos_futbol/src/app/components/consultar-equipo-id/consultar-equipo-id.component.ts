@@ -1,22 +1,27 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { EquiposService } from 'src/app/services/equipos.service';
 
 @Component({
   templateUrl: './consultar-equipo-id.component.html',
-  styleUrls: ['./consultar-equipo-id.component.scss']
+  styleUrls: ['./consultar-equipo-id.component.scss'],
 })
 export class ConsultarEquipoComponent {
-
   resultadoConsulta: any = [];
-  constructor(private fb: FormBuilder, private equipoService: EquiposService, private route: Router) { }
+  constructor(
+    private fb: FormBuilder,
+    private equipoService: EquiposService,
+    private route: Router,
+    private snackbar: MatSnackBar
+  ) {}
 
   consultaForm: FormGroup = this.fb.group({
     id: [''],
     fechaInicio: [''],
-    fechaFin: ['']
-  })
+    fechaFin: [''],
+  });
 
   onSubmit() {
     const id = this.consultaForm.value.id;
@@ -25,17 +30,25 @@ export class ConsultarEquipoComponent {
 
     if (id) {
       // Realizar consulta por ID
-      this.equipoService.getEquipobyId(id).subscribe((resultado) => {
-        this.resultadoConsulta = resultado;
-        // Manejar resultado
-      });
+      this.equipoService.getEquipobyId(id).subscribe(
+        (resultado) => {
+          this.resultadoConsulta = resultado;
+        },
+        (err) => this.snackbar.open(err, 'Cerrar')
+      );
     } else if (fechaInicio && fechaFin) {
       // Realizar consulta por rango de fechas
-      this.equipoService.getEquipobyFechas(fechaInicio, fechaFin).subscribe((resultado) => {
-        this.resultadoConsulta = resultado;
-        // Manejar resultado
-      });
+      this.equipoService.getEquipobyFechas(fechaInicio, fechaFin).subscribe(
+        (resultado) => {
+          this.resultadoConsulta = resultado;
+          // Manejar resultado
+        },
+        (err) => this.snackbar.open('No se encontraron resultados', 'Cerrar')
+      );
     } else {
+      this.snackbar.open('No se encontraron resultados', 'Cerrar', {
+        duration: 3000,
+      });
       console.log('Error');
       // Mostrar mensaje de error o realizar acción apropiada
     }
@@ -46,8 +59,7 @@ export class ConsultarEquipoComponent {
     this.resultadoConsulta = [];
   }
 
-  login(){
+  login() {
     this.route.navigate(['/login']);
   }
-
 }

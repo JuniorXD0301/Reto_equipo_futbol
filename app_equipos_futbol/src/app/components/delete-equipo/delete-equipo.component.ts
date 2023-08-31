@@ -33,4 +33,9 @@ export class DeleteEquipoComponent {
   volverAListar() {
     this.router.navigate(['/equipos/listar']);
   }
+
+  logout() {
+    this.equipoService.logout();
+    this.router.navigate(['/logout']);
+  }
 }

@@ -1,32 +1,7 @@
-.dj-banner {
-    margin: 30px 0;
-    position: relative;
-  }
-  .dj-banner .dj-bg img {
-    margin: 20px auto;
-    padding: 20px 0;
-  }
-  .dj-banner .dj-text {
-    text-align: center;
-    padding-bottom: 20px;
-  }
-  @media screen and (min-width: 768px) {
-    .dj-banner .dj-bg img {
-      margin-right: 100px;
-    }
-    .dj-banner .dj-text {
-      position: absolute;
-      top: 50%;
-      left: 10%;
-      transform: translate(-10%, -50%);
-      width: 50%;
-      text-align: left;
-    }
-    .dj-banner .dj-text h1 {
-      font-size: calc(2 * 1.5vw);
-    }
-    .dj-banner .dj-text p {
-      font-size: calc(1.2 * 1.5vw);
-    }
-  }
-  
+.boton-logout {
+  text-align: right;
+  padding-right: 2%;
+}
+.box{
+  padding-top: 2%;
+}

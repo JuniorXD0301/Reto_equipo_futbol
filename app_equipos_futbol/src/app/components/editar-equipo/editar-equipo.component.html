@@ -1,84 +1,91 @@
-<div class="dj-banner">
-  <div class="dj-bg">
-    <img src="/images/img-principal.png" alt="" height="400px" />
-    <div class="dj-text">
-      <h1><b>Editar equipo</b></h1>
-    </div>
-  </div>
+<div class="box">
+<div class="boton-logout">
+  <button type="button" class="btn btn-info" (click)="logout()">
+    Cerrar sesión
+  </button>
 </div>
-<div class="row">
-  <div class="col-md-4 offset-md-2">
-    <div class="card">
-      <div class="card-body">
-        <form [formGroup]="equipoForm" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-            <input
-              type="text"
-              id="nombre"
-              placeholder="Nombre del equipo"
-              class="form-control form-control-lg"
-              [formControlName]="'nombre'"
-              [(ngModel)]="equipo.nombre"
-            />
+</div>
+<div class="container mt-3">
+  <h1><b>Editar equipo</b></h1>
+  <button class="btn btn-info" (click)="inicio()">
+    Volver a la lista de equipos
+  </button>
+  <div class="row">
+    <div class="col-md-4 offset-md-2">
+      <div class="card">
+        <div class="card-body">
+          <form [formGroup]="equipoForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <input
+                type="text"
+                id="nombre"
+                placeholder="Nombre del equipo"
+                class="form-control form-control-lg"
+                [formControlName]="'nombre'"
+                [(ngModel)]="equipo.nombre"
+              />
+              <br />
+              <input
+                type="text"
+                id="estadio"
+                placeholder="Nombre del estadio"
+                class="form-control form-control-lg"
+                [formControlName]="'estadio'"
+                [(ngModel)]="equipo.estadio"
+              /><br />
+              <input
+                type="text"
+                id="sitioWeb"
+                placeholder="sitio web del equipo"
+                class="form-control form-control-lg"
+                [formControlName]="'sitioWeb'"
+                [(ngModel)]="equipo.sitioWeb"
+              /><br />
+              <input
+                type="text"
+                id="nacionalidad"
+                placeholder="Nacionalidad del equipo"
+                class="form-control form-control-lg"
+                [formControlName]="'nacionalidad'"
+                [(ngModel)]="equipo.nacionalidad"
+              /><br />
+              <input
+                type="text"
+                id="fundacion"
+                placeholder="Fecha de fundación del equipo"
+                class="form-control form-control-lg"
+                [formControlName]="'fundacion'"
+                [(ngModel)]="equipo.fundacion"
+              /><br />
+              <input
+                type="text"
+                id="entrenador"
+                placeholder="Entrenador actual del equipo"
+                class="form-control form-control-lg"
+                [formControlName]="'entrenador'"
+                [(ngModel)]="equipo.entrenador"
+              /><br />
+              <input
+                id="capacidad"
+                placeholder="Capacidad del estadio del equipo"
+                class="form-control form-control-lg"
+                [formControlName]="'capacidad'"
+                [(ngModel)]="equipo.capacidad"
+              /><br />
+              <input
+                id="valor"
+                placeholder="Valor del equipo"
+                class="form-control form-control-lg"
+                [formControlName]="'valor'"
+                [(ngModel)]="equipo.valor"
+              />
+            </div>
             <br />
-            <input
-              type="text"
-              id="estadio"
-              placeholder="Nombre del estadio"
-              class="form-control form-control-lg"
-              [formControlName]="'estadio'"
-              [(ngModel)]="equipo.estadio"
-            /><br />
-            <input
-              type="text"
-              id="sitioWeb"
-              placeholder="sitio web del equipo"
-              class="form-control form-control-lg"
-              [formControlName]="'sitioWeb'"
-              [(ngModel)]="equipo.sitioWeb"
-            /><br />
-            <input
-              type="text"
-              id="nacionalidad"
-              placeholder="Nacionalidad del equipo"
-              class="form-control form-control-lg"
-              [formControlName]="'nacionalidad'"
-              [(ngModel)]="equipo.nacionalidad"
-            /><br />
-            <input
-              type="text"
-              id="fundacion"
-              placeholder="Fecha de fundación del equipo"
-              class="form-control form-control-lg"
-              [formControlName]="'fundacion'"
-              [(ngModel)]="equipo.fundacion"
-            /><br />
-            <input
-              type="text"
-              id="entrenador"
-              placeholder="Entrenador actual del equipo"
-              class="form-control form-control-lg"
-              [formControlName]="'entrenador'"
-              [(ngModel)]="equipo.entrenador"
-            /><br />
-            <input
-              id="capacidad"
-              placeholder="Capacidad del estadio del equipo"
-              class="form-control form-control-lg"
-              [formControlName]="'capacidad'"
-              [(ngModel)]="equipo.capacidad"
-            /><br />
-            <input
-              id="valor"
-              placeholder="Valor del equipo"
-              class="form-control form-control-lg"
-              [formControlName]="'valor'"
-              [(ngModel)]="equipo.valor"
-            />
-          </div>
-          <br>
-          <button type="submit" class="btn btn-primary">Guardar cambios</button>
-        </form>
+            <button type="submit" class="btn btn-primary">
+              Guardar cambios
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </div>

@@ -15,6 +15,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { DeleteEquipoComponent } from './components/delete-equipo/delete-equipo.component';
 import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { LogoutComponent } from './components/logout/logout.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
+    MatFormFieldModule,
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],

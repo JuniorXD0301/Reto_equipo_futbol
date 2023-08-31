@@ -57,6 +57,14 @@ export class EditarEquipoComponent implements OnInit {
       );
   }
 
+  logout() {
+    this.equipoService.logout();
+    this.route.navigate(['/logout']);
+  }
+
+  inicio() {
+    this.route.navigate(['/equipos/listar']);
+  }
   equipo: Equipo | any = {
     id: 0,
     nombre: '',

@@ -1,4 +1,11 @@
-<div class="container mt-5">
+<div class="box">
+  <div class="boton-logout">
+    <button type="button" class="btn btn-info" (click)="logout()">
+      Cerrar sesión
+    </button>
+  </div>
+  </div>
+<div class="container mt-3">
     <h1><b>Eliminar equipo</b></h1>
     <p>¿Está seguro de eliminar el equipo con el ID '{{ equipoId }}'?</p>
     <button class="btn btn-primary" (click)="eliminarEquipo()">Sí</button>
