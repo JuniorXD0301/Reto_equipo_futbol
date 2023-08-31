@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <h1><b>Crear equipo</b></h1>
+    <form [formGroup]="equipoForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="nombre">Nombre del equipo</label>
+        <input type="text" id="nombre" formControlName="nombre" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="nombre">Estadio del equipo</label>
+        <input type="text" id="estadio" formControlName="estadio" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="nombre">Sitio web del equipo</label>
+        <input type="text" id="sitioWeb" formControlName="sitioWeb" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="nombre">Nacionalidad del equipo</label>
+        <input type="text" id="nacionalidad" formControlName="nacionalidad" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="nombre">Año de fundación del equipo</label>
+        <input type="text" id="fundacion" formControlName="fundacion" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="nombre">Entrenador del equipo</label>
+        <input type="text" id="entrenador" formControlName="entrenador" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="nombre">Capacidad del estadio del equipo</label>
+        <input type="number" id="capacidad" formControlName="capacidad" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="nombre">Valor del equipo</label>
+        <input type="number" id="valor" formControlName="valor" class="form-control" />
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary">Crear equipo</button>
+    </form>
+  </div>
+  

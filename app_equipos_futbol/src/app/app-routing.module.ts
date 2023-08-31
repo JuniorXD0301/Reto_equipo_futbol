@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListarEquiposComponent } from './components/listar-equipos/listar-equipos.component';
 import { EditarEquipoComponent } from './components/editar-equipo/editar-equipo.component';
 import { ConsultarEquipoComponent } from './components/consultar-equipo-id/consultar-equipo-id.component';
+import { CreateEquipoComponent } from './components/create-equipo/create-equipo.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'equipos/consultar',
     component: ConsultarEquipoComponent,
+  },
+  {
+    path: 'equipos/crear',
+    component: CreateEquipoComponent,
   }
 ];
 

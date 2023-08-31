@@ -43,4 +43,8 @@ export class ListarEquiposComponent implements OnInit {
   consultarEquipo(){
     this.route.navigate(['/equipos/consultar']);
   }
+
+  crearEquipo(){
+    this.route.navigate(['/equipos/crear']);
+  }
 }
