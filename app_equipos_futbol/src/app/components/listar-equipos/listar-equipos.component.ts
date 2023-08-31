@@ -36,12 +36,7 @@ export class ListarEquiposComponent implements OnInit {
   }
 
   editarEquipo(id: number) {
-    // Redirige a la URL equipos/editar/:id
-    this.route.navigate(['/equipos/editar', id]);
-  }
-
-  consultarEquipo(){
-    this.route.navigate(['/equipos/consultar']);
+    this.route.navigate(['/equipos/actualizar', id]);
   }
 
   crearEquipo(){
@@ -51,5 +46,10 @@ export class ListarEquiposComponent implements OnInit {
   eliminarEquipo(id: number) {
     // Redirige a la URL equipos/eliminar/:id
     this.route.navigate(['/equipos/eliminar', id]);
+  }
+
+  logout() {
+    this.equiposService.logout();
+    this.route.navigate(['/logout']);
   }
 }

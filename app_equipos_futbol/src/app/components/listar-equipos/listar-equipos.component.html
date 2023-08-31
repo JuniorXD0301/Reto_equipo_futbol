@@ -1,99 +1,98 @@
-<div class="dj-banner">
-  <div class="dj-bg">
-    <div class="dj-text">
-      <h1><b>Lista de equipos</b></h1>
+<div class="container mt-2">
+  <h1><b>Lista de equipos</b></h1>
+  <div class="row">
+    <div class="boton-logout">
+      <button type="button" class="btn btn-info" (click)="logout()">Cerrar sesión</button>
+    </div>
+    <div class="boton">
+      <button type="button" class="btn btn-secondary" (click)="crearEquipo()">
+        Crear equipo
+      </button>
     </div>
   </div>
-</div>
-<div class="boton">
-  <button type="button" class="btn btn-secondary" (click)="crearEquipo()">
-    Crear equipo
-  </button>
-  <button type="button" class="btn btn-secondary" (click)="consultarEquipo()">
-    Consultar equipos
-  </button>
-</div>
-<div class="row">
-  <div class="col-md-4" *ngFor="let equipo of equipos">
-    <div class="card-body">
-      <ul>
-        <li>
-          <h3 class="card-title">
-            Nombre del equipo:
+
+  <div class="row">
+    <div class="col-md-4" *ngFor="let equipo of equipos">
+      <div class="card-body">
+        <ul>
+          <li>
+            <h3 class="card-title">
+              Nombre del equipo:
+              {{
+                equipo.nombre
+                  ? equipo.nombre
+                  : "No se tiene información del nombre del equipo"
+              }}
+            </h3>
+          </li>
+          <li>
+            Estadio:
             {{
-              equipo.nombre
-                ? equipo.nombre
-                : "No se tiene información del nombre del equipo"
+              equipo.estadio
+                ? equipo.estadio
+                : "No se tiene información del estadio del equipo"
             }}
-          </h3>
-        </li>
-        <li>
-          Estadio:
-          {{
-            equipo.estadio
-              ? equipo.estadio
-              : "No se tiene información del estadio del equipo"
-          }}
-        </li>
-        <li>
-          Sitio web:
-          {{
-            equipo.sitioWeb
-              ? equipo.sitioWeb
-              : "No se tiene información del sitio web del equipo"
-          }}
-        </li>
-        <li>
-          Nacionalidad:
-          {{
-            equipo.nacionalidad
-              ? equipo.nacionalidad
-              : "No se tiene información de la nacionalidad del equipo"
-          }}
-        </li>
-        <li>
-          Año de fundación:
-          {{ formatearFecha(equipo.fundacion) }}
-        </li>
-        <li>
-          Entrenador:
-          {{
-            equipo.entrenador
-              ? equipo.entrenador
-              : "No se tiene información del entrenador del equipo"
-          }}
-        </li>
-        <li>
-          Capacidad del estadio:
-          {{
-            equipo.capacidad
-              ? equipo.capacidad
-              : "No se tiene información de la capacidad del equipo"
-          }}
-        </li>
-        <li>
-          Valor:
-          {{
-            equipo.valor
-              ? equipo.valor
-              : "No se tiene información del valor del equipo"
-          }}
-        </li>
-      </ul>
-      <button
-        type="button"
-        class="btn btn-primary"
-        (click)="editarEquipo(equipo.id)"
-      >
-        Editar equipo
-      </button>
-      <button
-      type="button"
-      class="btn btn-danger"
-      (click)="eliminarEquipo(equipo.id)"
-    >
-      Eliminar equipo
-    </button>
+          </li>
+          <li>
+            Sitio web:
+            {{
+              equipo.sitioWeb
+                ? equipo.sitioWeb
+                : "No se tiene información del sitio web del equipo"
+            }}
+          </li>
+          <li>
+            Nacionalidad:
+            {{
+              equipo.nacionalidad
+                ? equipo.nacionalidad
+                : "No se tiene información de la nacionalidad del equipo"
+            }}
+          </li>
+          <li>
+            Año de fundación:
+            {{ formatearFecha(equipo.fundacion) }}
+          </li>
+          <li>
+            Entrenador:
+            {{
+              equipo.entrenador
+                ? equipo.entrenador
+                : "No se tiene información del entrenador del equipo"
+            }}
+          </li>
+          <li>
+            Capacidad del estadio:
+            {{
+              equipo.capacidad
+                ? equipo.capacidad
+                : "No se tiene información de la capacidad del equipo"
+            }}
+          </li>
+          <li>
+            Valor:
+            {{
+              equipo.valor
+                ? equipo.valor
+                : "No se tiene información del valor del equipo"
+            }}
+          </li>
+        </ul>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="editarEquipo(equipo.id)"
+        >
+          Editar equipo
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="eliminarEquipo(equipo.id)"
+        >
+          Eliminar equipo
+        </button>
+      </div>
     </div>
   </div>
 </div>

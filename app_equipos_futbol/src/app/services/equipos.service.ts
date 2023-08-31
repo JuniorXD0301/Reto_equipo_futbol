@@ -34,4 +34,12 @@ export class EquiposService {
   eliminarEquipo(id: number){
     return this.http.delete(`${this.API_URI}/equipos/eliminar/${id}`);
   }
+
+  login(usuario: string, password: string){
+    return this.http.post(`${this.API_URI}/login`, {usuario, password})
+  }
+  
+  logout(){
+    return this.http.get(`${this.API_URI}/logout`)
+  }
 }

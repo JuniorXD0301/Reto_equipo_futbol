@@ -5,12 +5,18 @@ import { EditarEquipoComponent } from './components/editar-equipo/editar-equipo.
 import { ConsultarEquipoComponent } from './components/consultar-equipo-id/consultar-equipo-id.component';
 import { CreateEquipoComponent } from './components/create-equipo/create-equipo.component';
 import { DeleteEquipoComponent } from './components/delete-equipo/delete-equipo.component';
+import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/equipos/listar',
+    redirectTo: '/login',
     pathMatch: 'full'
+  },
+  {
+      path: 'login',
+      component: LoginComponent,
   },
   {
     path: 'equipos/listar',
@@ -21,7 +27,7 @@ const routes: Routes = [
     component: EditarEquipoComponent,
   },
   {
-    path: 'equipos/editar/:id',
+    path: 'equipos/actualizar/:id',
     component: EditarEquipoComponent,
   },
   {
@@ -35,6 +41,10 @@ const routes: Routes = [
   {
     path: 'equipos/eliminar/:id',
     component: DeleteEquipoComponent,
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent,
   }
 ];
 

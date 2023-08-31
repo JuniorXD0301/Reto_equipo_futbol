@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { EquiposService } from 'src/app/services/equipos.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { EquiposService } from 'src/app/services/equipos.service';
 export class ConsultarEquipoComponent {
 
   resultadoConsulta: any = [];
-  constructor(private fb: FormBuilder, private equipoService: EquiposService) { }
+  constructor(private fb: FormBuilder, private equipoService: EquiposService, private route: Router) { }
 
   consultaForm: FormGroup = this.fb.group({
     id: [''],
@@ -25,16 +26,12 @@ export class ConsultarEquipoComponent {
     if (id) {
       // Realizar consulta por ID
       this.equipoService.getEquipobyId(id).subscribe((resultado) => {
-        console.log(resultado);
         this.resultadoConsulta = resultado;
         // Manejar resultado
       });
     } else if (fechaInicio && fechaFin) {
       // Realizar consulta por rango de fechas
       this.equipoService.getEquipobyFechas(fechaInicio, fechaFin).subscribe((resultado) => {
-        console.log(fechaInicio);
-        console.log(fechaFin);
-        console.log(resultado);
         this.resultadoConsulta = resultado;
         // Manejar resultado
       });
@@ -47,6 +44,10 @@ export class ConsultarEquipoComponent {
   limpiarConsulta() {
     this.consultaForm.reset();
     this.resultadoConsulta = [];
+  }
+
+  login(){
+    this.route.navigate(['/login']);
   }
 
 }

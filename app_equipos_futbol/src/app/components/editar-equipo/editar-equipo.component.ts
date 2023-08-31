@@ -51,7 +51,6 @@ export class EditarEquipoComponent implements OnInit {
       .actualizarEquipo(params['id'], this.equipoForm.value)
       .subscribe(
         (res) => {
-          console.log(res);
           this.route.navigate(['/equipos/listar']);
         },
         (err) => console.log(err)
