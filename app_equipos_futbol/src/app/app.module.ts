@@ -7,17 +7,21 @@ import { ListarEquiposComponent } from './components/listar-equipos/listar-equip
 import { EditarEquipoComponent } from './components/editar-equipo/editar-equipo.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ConsultarEquipoComponent } from './components/consultar-equipo-id/consultar-equipo-id.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarEquiposComponent,
-    EditarEquipoComponent
+    EditarEquipoComponent,
+    ConsultarEquipoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

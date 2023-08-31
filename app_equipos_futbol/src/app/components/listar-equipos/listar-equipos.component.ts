@@ -1,5 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { EquiposService } from 'src/app/services/equipos.service';
 
 @Component({
@@ -9,7 +10,11 @@ import { EquiposService } from 'src/app/services/equipos.service';
 export class ListarEquiposComponent implements OnInit {
   equipos: any = [];
 
-  constructor(private equiposService: EquiposService, private datePipe: DatePipe) {}
+  constructor(
+    private equiposService: EquiposService,
+    private datePipe: DatePipe,
+    private route: Router
+  ) {}
   ngOnInit(): void {
     this.getEquipos();
   }
@@ -24,6 +29,18 @@ export class ListarEquiposComponent implements OnInit {
   }
 
   formatearFecha(fecha: string): string {
-    return this.datePipe.transform(fecha, 'dd/MM/yyyy') || 'No se tiene información del año de fundacion del equipo';
+    return (
+      this.datePipe.transform(fecha, 'yyyy-MM-dd') ||
+      'No se tiene información del año de fundacion del equipo'
+    );
+  }
+
+  editarEquipo(id: number) {
+    // Redirige a la URL equipos/editar/:id
+    this.route.navigate(['/equipos/editar', id]);
+  }
+
+  consultarEquipo(){
+    this.route.navigate(['/equipos/consultar']);
   }
 }

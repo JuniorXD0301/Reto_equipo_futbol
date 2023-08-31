@@ -1,10 +1,15 @@
 <div class="dj-banner">
-    <div class="dj-bg">
-        <img src="/images/img-principal.png" alt="" height="400px">
-        <div class="dj-text">
-            <h1><b>Lista de equipos</b></h1>
-        </div>
-    </div>            
+  <div class="dj-bg">
+    <img src="/images/img-principal.png" alt="" height="400px" />
+    <div class="dj-text">
+      <h1><b>Lista de equipos</b></h1>
+    </div>
+  </div>
+</div>
+<div class="boton">
+  <button type="button" class="btn btn-secondary" (click)="consultarEquipo()">
+    Consultar equipos
+  </button>
 </div>
 <div class="row">
   <div class="col-md-4" *ngFor="let equipo of equipos">
@@ -73,6 +78,13 @@
           }}
         </li>
       </ul>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="editarEquipo(equipo.id)"
+      >
+        Editar equipo
+      </button>
     </div>
   </div>
 </div>

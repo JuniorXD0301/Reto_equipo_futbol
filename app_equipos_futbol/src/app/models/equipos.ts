@@ -4,7 +4,7 @@ export interface Equipo {
     estadio: string;
     sitioWeb: string;
     nacionalidad: string;
-    fundacion: Date;
+    fundacion: string;
     entrenador: string;
     capacidad: number;
     valor: number;

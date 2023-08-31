@@ -1,0 +1,57 @@
+<div class="container mt-5">
+  <h1><b>Consulta de equipos</b></h1>
+  <form [formGroup]="consultaForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="id">Consulte por el ID del equipo</label>
+      <input type="number" formControlName="id" class="form-control" />
+    </div>
+    <br />
+    Consulte por fechas
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="fechaInicio">Fecha de Inicio</label>
+          <input
+            type="date"
+            formControlName="fechaInicio"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="fechaFin">Fecha de Fin</label>
+          <input type="date" formControlName="fechaFin" class="form-control" />
+        </div>
+      </div>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Consultar</button>
+    <button type="reset" class="btn btn-warning">Limpiar formulario</button>
+  </form>
+</div>
+<br />
+<div class="container mt-5">
+  <div *ngIf="resultadoConsulta">
+    <h2>Resultado de la consulta:</h2>
+    <pre>{{ resultadoConsulta | json }}</pre>
+    <!-- <div *ngFor="let equipo of resultadoConsulta">
+    <h2>Equipo {{ equipo.id }}</h2>
+    <p>Nombre: {{ equipo.nombre }}</p>
+    <p>Estadio: {{ equipo.estadio }}</p>
+    <p>Sitio web: {{ equipo.sitioWeb }}</p>
+    <p>Nacionalidad: {{ equipo.nacionalidad }}</p>
+    <p>Fecha de fundación: {{ equipo.fundacion }}</p>
+    <p>Entrenador: {{ equipo.entrenador }}</p>
+    <p>Capacidad: {{ equipo.capacidad }}</p>
+    <p>Valor: {{ equipo.valor }}</p>
+  </div> -->
+    <button
+      type="button"
+      class="btn btn-secondary ml-2"
+      (click)="limpiarConsulta()"
+    >
+      Limpiar consulta
+    </button>
+  </div>
+</div>
