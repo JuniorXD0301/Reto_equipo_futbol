@@ -4,6 +4,7 @@ import { ListarEquiposComponent } from './components/listar-equipos/listar-equip
 import { EditarEquipoComponent } from './components/editar-equipo/editar-equipo.component';
 import { ConsultarEquipoComponent } from './components/consultar-equipo-id/consultar-equipo-id.component';
 import { CreateEquipoComponent } from './components/create-equipo/create-equipo.component';
+import { DeleteEquipoComponent } from './components/delete-equipo/delete-equipo.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'equipos/crear',
     component: CreateEquipoComponent,
+  },
+  {
+    path: 'equipos/eliminar/:id',
+    component: DeleteEquipoComponent,
   }
 ];
 

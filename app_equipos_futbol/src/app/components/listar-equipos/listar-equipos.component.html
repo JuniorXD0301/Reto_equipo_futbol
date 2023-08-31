@@ -1,6 +1,5 @@
 <div class="dj-banner">
   <div class="dj-bg">
-    <img src="/images/img-principal.png" alt="" height="400px" />
     <div class="dj-text">
       <h1><b>Lista de equipos</b></h1>
     </div>
@@ -19,14 +18,14 @@
     <div class="card-body">
       <ul>
         <li>
-          <h5 class="card-title">
+          <h3 class="card-title">
             Nombre del equipo:
             {{
               equipo.nombre
                 ? equipo.nombre
                 : "No se tiene información del nombre del equipo"
             }}
-          </h5>
+          </h3>
         </li>
         <li>
           Estadio:
@@ -88,6 +87,13 @@
       >
         Editar equipo
       </button>
+      <button
+      type="button"
+      class="btn btn-danger"
+      (click)="eliminarEquipo(equipo.id)"
+    >
+      Eliminar equipo
+    </button>
     </div>
   </div>
 </div>

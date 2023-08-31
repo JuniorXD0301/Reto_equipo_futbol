@@ -47,4 +47,9 @@ export class ListarEquiposComponent implements OnInit {
   crearEquipo(){
     this.route.navigate(['/equipos/crear']);
   }
+
+  eliminarEquipo(id: number) {
+    // Redirige a la URL equipos/eliminar/:id
+    this.route.navigate(['/equipos/eliminar', id]);
+  }
 }

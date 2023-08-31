@@ -30,4 +30,8 @@ export class EquiposService {
   actualizarEquipo(id: number, equipo: Equipo){
     return this.http.put(`${this.API_URI}/equipos/actualizar/${id}`, equipo);
   }
+
+  eliminarEquipo(id: number){
+    return this.http.delete(`${this.API_URI}/equipos/eliminar/${id}`);
+  }
 }

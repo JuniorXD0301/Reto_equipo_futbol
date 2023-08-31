@@ -12,6 +12,7 @@ import { ConsultarEquipoComponent } from './components/consultar-equipo-id/consu
 import { CreateEquipoComponent } from './components/create-equipo/create-equipo.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { DeleteEquipoComponent } from './components/delete-equipo/delete-equipo.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     EditarEquipoComponent,
     ConsultarEquipoComponent,
     CreateEquipoComponent,
+    DeleteEquipoComponent,
   ],
   imports: [
     BrowserModule,
