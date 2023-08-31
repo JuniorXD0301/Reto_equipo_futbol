@@ -5,7 +5,7 @@ import { EquiposService } from 'src/app/services/equipos.service';
 
 @Component({
   templateUrl: './delete-equipo.component.html',
-  styleUrls: ['./delete-equipo.component.scss']
+  styleUrls: ['./delete-equipo.component.scss'],
 })
 export class DeleteEquipoComponent {
   equipoId: number = 0;
@@ -23,10 +23,12 @@ export class DeleteEquipoComponent {
 
   eliminarEquipo() {
     this.equipoService.eliminarEquipo(this.equipoId).subscribe(() => {
-      this.snackBar.open('Equipo eliminado con éxito', 'Cerrar', {
-        duration: 3000,
-      });
-      this.router.navigate(['/equipos/listar']);
+      this.snackBar
+        .open('Equipo eliminado con éxito', 'Cerrar')
+        .afterDismissed()
+        .subscribe(() => {
+          this.router.navigate(['/equipos/listar']);
+        });
     });
   }
 

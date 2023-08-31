@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { EquiposService } from 'src/app/services/equipos.service';
@@ -19,8 +19,20 @@ export class ConsultarEquipoComponent {
 
   consultaForm: FormGroup = this.fb.group({
     id: [''],
-    fechaInicio: [''],
-    fechaFin: [''],
+    fechaInicio: [
+      '',
+      Validators.compose([
+        Validators.required,
+        Validators.pattern('^\\d{2}-\\d{2}-\\d{4}$'),
+      ]),
+    ],
+    fechaFin: [
+      '',
+      Validators.compose([
+        Validators.required,
+        Validators.pattern('^\\d{2}-\\d{2}-\\d{4}$'),
+      ]),
+    ],
   });
 
   onSubmit() {
@@ -41,9 +53,8 @@ export class ConsultarEquipoComponent {
       this.equipoService.getEquipobyFechas(fechaInicio, fechaFin).subscribe(
         (resultado) => {
           this.resultadoConsulta = resultado;
-          // Manejar resultado
         },
-        (err) => this.snackbar.open('No se encontraron resultados', 'Cerrar')
+        (err) => this.snackbar.open('Formato fecha incorrecto', 'Cerrar')
       );
     } else {
       this.snackbar.open('No se encontraron resultados', 'Cerrar', {

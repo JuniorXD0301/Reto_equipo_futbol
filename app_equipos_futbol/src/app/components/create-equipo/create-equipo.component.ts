@@ -32,9 +32,7 @@ export class CreateEquipoComponent {
       const nuevoEquipo = this.equipoForm.value;
       this.equipoService.saveEquipo(nuevoEquipo).subscribe((res) => {
         this.snackBar
-          .open('Equipo creado con éxito', 'Cerrar', {
-            duration: 3000, // Duración en milisegundos
-          })
+          .open('Equipo creado con éxito', 'Cerrar',)
           .afterDismissed()
           .subscribe(() => {
             this.route.navigate(['/equipos/listar']);
